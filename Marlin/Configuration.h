@@ -610,9 +610,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  30.3634
-    #define DEFAULT_Ki   3.9536
-    #define DEFAULT_Kd 58.2977
+    #define DEFAULT_Kp  30.36
+    #define DEFAULT_Ki   3.95
+    #define DEFAULT_Kd 58.29
   #endif
 #endif // PIDTEMP
 
@@ -651,9 +651,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 63.5573
-  #define DEFAULT_bedKi 5.6748
-  #define DEFAULT_bedKd  474.5613
+  #define DEFAULT_bedKp 63.55
+  #define DEFAULT_bedKi 5.67
+  #define DEFAULT_bedKd  474.56
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1200,7 +1200,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET {-7, 18, -2.8}
+#define NOZZLE_TO_PROBE_OFFSET {-7, 18,-0.52}
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1277,7 +1277,7 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_DEPLOY_PROBE   15 // Z Clearance for Deploy/Stow
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
@@ -1399,12 +1399,12 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 250
-#define Y_BED_SIZE 210
+#define X_BED_SIZE 255
+#define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -25
-#define Y_MIN_POS -18
+#define X_MIN_POS -21 //-19 to make it like Prusa Bed
+#define Y_MIN_POS -27  //-27 
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
