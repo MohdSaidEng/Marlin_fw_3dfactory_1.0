@@ -1060,7 +1060,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-#define Z_MIN_PROBE_PIN PE4 // Pin PE4 is the  ske2
+#define Z_MIN_PROBE_PIN PE4 // Pin PE4 is pin for ske2
 
 /**
  * Probe Type
